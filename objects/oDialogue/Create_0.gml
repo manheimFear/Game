@@ -1,0 +1,10 @@
+visible = false;
+charName = "";
+charText = "";
+charSprite = DialogueSprite;
+textIndex = 0;
+textSpeed = 4; // скорость появления букв
+textTimer = 0;
+displayText = "";
+currentNPC = noone;
+nameSprite = -1;

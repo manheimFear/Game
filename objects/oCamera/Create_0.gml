@@ -1,0 +1,11 @@
+camWidth = 200;
+camHeight = 112;
+targetCamWidth = 1280;
+targetCamHeight = 720;
+targetX = room_width / 2;
+targetY = room_height / 2;
+camX = targetX;
+camY = targetY;
+savedCamX = camX;
+savedCamY = camY;
+returning = false;
