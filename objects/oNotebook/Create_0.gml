@@ -1,3 +1,7 @@
+animState = "none"; // "none", "opening", "page_transition"
+animSprite = -1;
+animTimer = 0;
+pendingPage = -1; // страница, на которую переходим после анимации
 global.fMyFont = font_add("Chalkduster.ttf", 24, false, false, 32, 128);
 // Все места где visible = false в oNotebook:
 visible          = false;

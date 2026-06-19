@@ -152,8 +152,17 @@ if (moveY < 10) {
 
 var wall_inst_left  = instance_place(x - 1, y, oPlatform);
 var wall_inst_right = instance_place(x + 1, y, oPlatform);
-touch_wall_left  = (wall_inst_left  != noone) && (wall_inst_left.bbox_right  <= bbox_left + 2);
-touch_wall_right = (wall_inst_right != noone) && (wall_inst_right.bbox_left >= bbox_right - 2);
+
+// Карабканье не применяется к PlatformNotClimb:
+var _leftIsClimbable  = (wall_inst_left  != noone)
+                     && (wall_inst_left.object_index  != oPlatformNotClimb);
+var _rightIsClimbable = (wall_inst_right != noone)
+                     && (wall_inst_right.object_index != oPlatformNotClimb);
+
+touch_wall_left  = _leftIsClimbable
+                && (wall_inst_left.bbox_right  <= bbox_left  + 2);
+touch_wall_right = _rightIsClimbable
+                && (wall_inst_right.bbox_left  >= bbox_right - 2);
 
 if (!_onGround) {
     if ((touch_wall_left || touch_wall_right) && moveY > 0) {
@@ -192,24 +201,5 @@ if (isSleeping) {
     if (image_index >= sprite_get_number(sPlayer_Sleep) - 1) {
         image_speed = 0;
         image_index = sprite_get_number(sPlayer_Sleep) - 1;
-    }
-}
-
-// ── Открытие меню (единственная копия) ──────────────────────
-if (keyboard_check_pressed(ord("N")) && global.hasNotebook) {
-    var nb = instance_find(oNotebook, 0);
-    if (nb != noone && !nb.visible) {
-        nb.visible         = true;
-        nb.currentPage     = 0;
-        nb.selectedButton  = 0;
-        global.menuOpen    = true;
-       global.gamePaused = true;
-    }
-}
-if (place_meeting(x, y, BedTouch)) {
-    show_debug_message("Touching bed");
-
-    if (keyboard_check_pressed(ord("E"))) {
-        show_debug_message("E pressed");
     }
 }

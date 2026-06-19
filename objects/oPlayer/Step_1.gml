@@ -1,6 +1,11 @@
 /// @description
-touch_wall_left  = place_meeting(x - 1, y, oPlatform) && !place_meeting(x, y + 1, oPlatform);
-touch_wall_right = place_meeting(x + 1, y, oPlatform) && !place_meeting(x, y + 1, oPlatform);
+// Begin Step — заменить:
+touch_wall_left  = place_meeting(x - 1, y, oPlatform)
+                && !place_meeting(x, y + 1, oPlatform)
+                && !instance_place(x - 1, y, oPlatformNotClimb);
+touch_wall_right = place_meeting(x + 1, y, oPlatform)
+                && !place_meeting(x, y + 1, oPlatform)
+                && !instance_place(x + 1, y, oPlatformNotClimb);
 
 if (inputJump) {
     show_debug_message("JUMP: touchL=" + string(touch_wall_left) + " touchR=" + string(touch_wall_right) + " onGround=" + string(place_meeting(x, y+1, oPlatformParent)));

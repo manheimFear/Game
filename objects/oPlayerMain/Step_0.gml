@@ -45,16 +45,10 @@ if (place_meeting(x, y + moveY, oPlatformParent)) {
     moveY = 0;
 }
 y += moveY;
-
-if (keyboard_check_pressed(ord("N")) && global.hasNotebook) {
-    var nb = instance_find(oNotebook, 0);
-    if (nb != noone && !nb.visible) {
-        nb.visible         = true;
-        nb.currentPage     = 0;
-        nb.selectedButton  = 0;
-        global.menuOpen    = true;
-       global.gamePaused = true;
-    }
+if (global.loadPlayerX != -1) {
+    x = global.loadPlayerX;
+    y = global.loadPlayerY;
+    global.loadPlayerX = -1;
+    global.loadPlayerY = -1;
 }
-
 

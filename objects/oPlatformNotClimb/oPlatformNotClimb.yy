@@ -10,8 +10,8 @@
     "path":"folders/MiniGame 1/Objects.yy",
   },
   "parentObjectId":{
-    "name":"oPlatformParent",
-    "path":"objects/oPlatformParent/oPlatformParent.yy",
+    "name":"oPlatform",
+    "path":"objects/oPlatform/oPlatform.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

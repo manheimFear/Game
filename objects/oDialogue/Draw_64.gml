@@ -53,3 +53,24 @@ for (var i = 1; i <= string_length(_line); i++) {
     draw_text(_textX + _offsetX, _currentY, _char);
     _offsetX += string_width(_char);
 }
+
+if (showingChoices) {
+    choiceAreas = []; // пересоздаём каждый кадр для актуальных координат
+    var _startY = 400; // подбери под свой UI
+    var _boxHeight = 50;
+    var _boxSpacing = 60;
+    
+    for (var i = 0; i < array_length(choices); i++) {
+        var _y = _startY + i * _boxSpacing;
+        var _spr = (i == selectedChoice) ? choiceBoxSelectedSprite : choiceBoxSprite;
+        
+        draw_sprite_stretched(_spr, 0, 200, _y, 600, _boxHeight);
+        
+        draw_set_font(fMyFont);
+        draw_set_colour((i == selectedChoice) ? c_yellow : c_white);
+        draw_text(220, _y + 15, choices[i].text);
+        
+        // Сохраняем зону для проверки мыши в Step
+        array_push(choiceAreas, {x: 200, y: _y, w: 600, h: _boxHeight});
+    }
+}

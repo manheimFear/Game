@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"FiltrationDialogue",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"FiltrationDialogue",
+  "parent":{
+    "name":"THEFIRSTANDONLYGAME",
+    "path":"THEFIRSTANDONLYGAME.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

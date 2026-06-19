@@ -3,6 +3,10 @@ if (!visible) exit;
 var gW = display_get_gui_width();
 var gH = display_get_gui_height();
 
+if (animState == "opening" || animState == "page_transition") {
+    draw_sprite(animSprite, animTimer, 0, 0); // конкретный кадр анимации
+    exit; // не рисуем страницы пока крутится анимация
+}
 // ── ГЛАВНОЕ МЕНЮ ──
 if (currentPage == 0) {
     var spr = [sMenuContinue, sMenuSave, sMenuItems, sMenuSettings, sMenuLeave];

@@ -1,7 +1,10 @@
 dialogueIndex = 0;
 dialogues = [
-    {name: "Алиса", text: "Привет!", sprite: NPC},
-    {name: "Лиса", text: "Привет как дела я хотел с тобой поговорить ор итв тттто ввоы тцрй ты оов ц бя   ыу уп р н ооооов кыДДДДДД ДДДДДДДДДД ДДДДДДДДДДД ДДДДДДДДДДДД ДДДДДДДДДД ДДДДДДДДДДД ДДДДДДДД ДДДДДД ДДДД ДДДДДД ДДДДДД ДДДДДДД ДДДДДДДДД ДДДДДДД ДДДДДДД ДДДДДД ДДДДД ДДДДД ДДДДД ДДДДДД ДДДДДДД ДДДДДДД ДДДДДДД ДДДДДД ДДДДД ДДДДД ", sprite: NPC},
-    {name: "Алиса", text: "Пока!", sprite: NPC},
-	];
+    {name: "Лиса", text: "Ты согласен помочь?", sprite: NPC, condition: "",
+     choices: [
+         {text: "Да, конечно", flagToSet: "agreedToHelp", flagValue: true, nextIndex: 2},
+         {text: "Нет, не сейчас", flagToSet: "agreedToHelp", flagValue: false, nextIndex: 4}
+     ]},
+];
 global.Dialogue = false;
+showingChoices = false;

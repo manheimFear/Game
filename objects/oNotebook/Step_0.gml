@@ -1,5 +1,15 @@
 if (!visible) exit;
 
+if (animState == "opening" || animState == "page_transition") {
+    animTimer++;
+    if (animTimer >= sprite_get_number(animSprite)) {
+        // Анимация закончилась — показываем целевую страницу
+        currentPage = pendingPage;
+        animState   = "none";
+    }
+    exit; // блокируем остальной Step пока идёт анимация
+}
+
 // ГЛАВНОЕ ИСПРАВЛЕНИЕ: GUI-координаты мыши вместо мировых
 var _mx = device_mouse_x_to_gui(0);
 var _my = device_mouse_y_to_gui(0);
@@ -38,10 +48,13 @@ if (currentPage == 0) {
     for (var _si = 0; _si < 3; _si++)
         saveSlotsData[_si] = scr_get_slot_meta(_si);
     break;
-                case 2:
-                    currentPage = 2;
-                    selectedItem = -1; showDetail = false; itemPage = 0;
-                    break;
+            case 2:
+    animState   = "page_transition";
+    animSprite  = sNotebookFlipAnim; // анимация переключения страницы
+    animTimer   = 0;
+    pendingPage = 2;
+    selectedItem = -1; showDetail = false; itemPage = 0;
+    break;
                 case 3: currentPage = 1; break;
                 case 4: game_end(); break;
             }
