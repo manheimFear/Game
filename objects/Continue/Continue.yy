@@ -9,8 +9,8 @@
   "name":"Continue",
   "overriddenProperties":[],
   "parent":{
-    "name":"THEFIRSTANDONLYGAME",
-    "path":"THEFIRSTANDONLYGAME.yyp",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

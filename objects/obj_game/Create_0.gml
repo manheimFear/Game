@@ -20,4 +20,5 @@ alarm[0] = room_speed * 60;
 alarm[1] = room_speed;
 global.inMinigame = false;
 global.gamePaused = false;
-global.hasNotebook = false; // ← добавить в obj_game Create
+global.hasNotebook = false;
+global.pickedItems = {}; // ключ = уникальное имя предмета, значение = true

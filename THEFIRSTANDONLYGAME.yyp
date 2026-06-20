@@ -31,7 +31,9 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "ForcedPrefabProjectReferences":[],
+  "ForcedPrefabProjectReferences":[
+    {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
+  ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"Chalkduster.ttf","CopyToMask":-1,"filePath":"datafiles","name":"Chalkduster.ttf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
@@ -42,6 +44,7 @@
   },
   "name":"THEFIRSTANDONLYGAME",
   "resources":[
+    {"id":{"name":"fMyFont","path":"fonts/fMyFont/fMyFont.yy",},},
     {"id":{"name":"Background","path":"objects/Background/Background.yy",},},
     {"id":{"name":"BedTouch","path":"objects/BedTouch/BedTouch.yy",},},
     {"id":{"name":"Box","path":"objects/Box/Box.yy",},},
@@ -74,6 +77,7 @@
     {"id":{"name":"oPlayerParent","path":"objects/oPlayerParent/oPlayerParent.yy",},},
     {"id":{"name":"oSpawn","path":"objects/oSpawn/oSpawn.yy",},},
     {"id":{"name":"oSpike","path":"objects/oSpike/oSpike.yy",},},
+    {"id":{"name":"Picked","path":"objects/Picked/Picked.yy",},},
     {"id":{"name":"Shadow","path":"objects/Shadow/Shadow.yy",},},
     {"id":{"name":"Vagonetka","path":"objects/Vagonetka/Vagonetka.yy",},},
     {"id":{"name":"Wall","path":"objects/Wall/Wall.yy",},},
@@ -98,6 +102,7 @@
     {"id":{"name":"DialogueSprite","path":"sprites/DialogueSprite/DialogueSprite.yy",},},
     {"id":{"name":"DialogueWindow","path":"sprites/DialogueWindow/DialogueWindow.yy",},},
     {"id":{"name":"Door","path":"sprites/Door/Door.yy",},},
+    {"id":{"name":"List","path":"sprites/List/List.yy",},},
     {"id":{"name":"namemissing","path":"sprites/namemissing/namemissing.yy",},},
     {"id":{"name":"nameshigi","path":"sprites/nameshigi/nameshigi.yy",},},
     {"id":{"name":"NPC","path":"sprites/NPC/NPC.yy",},},
@@ -152,6 +157,7 @@
     {"id":{"name":"sPlayer_Sleep","path":"sprites/sPlayer_Sleep/sPlayer_Sleep.yy",},},
     {"id":{"name":"sPlayer_Walk","path":"sprites/sPlayer_Walk/sPlayer_Walk.yy",},},
     {"id":{"name":"Sprite35","path":"sprites/Sprite35/Sprite35.yy",},},
+    {"id":{"name":"Sprite78","path":"sprites/Sprite78/Sprite78.yy",},},
     {"id":{"name":"sSavePage","path":"sprites/sSavePage/sSavePage.yy",},},
     {"id":{"name":"sSettingsPage","path":"sprites/sSettingsPage/sSettingsPage.yy",},},
     {"id":{"name":"sShadow","path":"sprites/sShadow/sShadow.yy",},},
@@ -169,9 +175,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"SecondRoom","path":"rooms/SecondRoom/SecondRoom.yy",},},
     {"roomId":{"name":"Room6","path":"rooms/Room6/Room6.yy",},},
     {"roomId":{"name":"Room7","path":"rooms/Room7/Room7.yy",},},
+    {"roomId":{"name":"SecondRoom","path":"rooms/SecondRoom/SecondRoom.yy",},},
     {"roomId":{"name":"menu","path":"rooms/menu/menu.yy",},},
     {"roomId":{"name":"Etalone","path":"rooms/Etalone/Etalone.yy",},},
     {"roomId":{"name":"ThirdRoom","path":"rooms/ThirdRoom/ThirdRoom.yy",},},

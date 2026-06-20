@@ -12,7 +12,7 @@ if (DialogueSprite != -1) {
 draw_sprite_stretched(DialogueWindow, 0, 0, 0, _guiW, _guiH);
 
 // Имя
-draw_set_font(global.fMyFont);
+draw_set_font(fMyFont);
 if (nameSprite != -1) {
     draw_sprite(nameSprite, 0, 30, 560);
 } else {
@@ -55,22 +55,21 @@ for (var i = 1; i <= string_length(_line); i++) {
 }
 
 if (showingChoices) {
-    choiceAreas = []; // пересоздаём каждый кадр для актуальных координат
-    var _startY = 400; // подбери под свой UI
-    var _boxHeight = 50;
-    var _boxSpacing = 60;
+    choiceAreas = [];
+    var _startY = 400;      // ← Y-координата первого варианта
+    var _boxHeight = 50;    // ← высота окна одного варианта
+    var _boxSpacing = 60;   // ← расстояние между вариантами по Y
     
     for (var i = 0; i < array_length(choices); i++) {
         var _y = _startY + i * _boxSpacing;
         var _spr = (i == selectedChoice) ? choiceBoxSelectedSprite : choiceBoxSprite;
         
-        draw_sprite_stretched(_spr, 0, 200, _y, 600, _boxHeight);
+        draw_sprite_stretched(_spr, 0, 200, _y, 600, _boxHeight); // 200 = X, 600 = ширина
         
         draw_set_font(fMyFont);
         draw_set_colour((i == selectedChoice) ? c_yellow : c_white);
         draw_text(220, _y + 15, choices[i].text);
         
-        // Сохраняем зону для проверки мыши в Step
         array_push(choiceAreas, {x: 200, y: _y, w: 600, h: _boxHeight});
     }
 }

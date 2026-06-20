@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"THEFIRSTANDONLYGAME",
-    "path":"THEFIRSTANDONLYGAME.yyp",
+    "name":"Menu",
+    "path":"folders/Menu.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,13 +1,17 @@
 if (!visible) exit;
 
+// Step event, в блоке анимации:
 if (animState == "opening" || animState == "page_transition") {
     animTimer++;
-    if (animTimer >= sprite_get_number(animSprite)) {
-        // Анимация закончилась — показываем целевую страницу
-        currentPage = pendingPage;
-        animState   = "none";
+    if (animTimer >= animFrameDelay) {
+        animTimer = 0;
+        animFrame++;
+        if (animFrame >= sprite_get_number(animSprite)) {
+            currentPage = pendingPage;
+            animState   = "none";
+        }
     }
-    exit; // блокируем остальной Step пока идёт анимация
+    exit;
 }
 
 // ГЛАВНОЕ ИСПРАВЛЕНИЕ: GUI-координаты мыши вместо мировых
@@ -52,6 +56,7 @@ if (currentPage == 0) {
     animState   = "page_transition";
     animSprite  = sNotebookFlipAnim; // анимация переключения страницы
     animTimer   = 0;
+	animFrame      = 0;
     pendingPage = 2;
     selectedItem = -1; showDetail = false; itemPage = 0;
     break;
@@ -271,3 +276,7 @@ global.gamePaused = false;
         else                     currentPage   = 0;
     }
 }
+
+
+
+

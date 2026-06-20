@@ -4,23 +4,9 @@ event_inherited();
 // Блокировка при диалоге ИЛИ меню
 if (global.Dialogue || global.menuOpen) {
     sprite_index = PlayerMainIdle;
-if (keyboard_check_pressed(ord("N")) && global.hasNotebook) {
-    var nb = instance_find(oNotebook, 0);
-    if (nb != noone && !nb.visible) {
-        nb.visible         = true;
-        nb.currentPage     = 0;
-        nb.selectedButton  = 0;
-        global.menuOpen    = true;
-       global.gamePaused = true;
-    }
+	gravSpeed = 0;
+	exit;
 }
-}
-
-if (!canMove) {
-    sprite_index = PlayerMainIdle;
-    exit;
-}
-
 var _left  = keyboard_check(ord("A"));
 var _right = keyboard_check(ord("D"));
 moveX = (_right - _left) * moveSpeed;
@@ -51,4 +37,5 @@ if (global.loadPlayerX != -1) {
     global.loadPlayerX = -1;
     global.loadPlayerY = -1;
 }
-
+show_debug_message(global.menuOpen);
+show_debug_message(global.Dialogue);

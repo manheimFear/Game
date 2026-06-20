@@ -14,3 +14,5 @@ selectedChoice = 0;
 choiceBoxSprite = sChoiceBoxNormal;     // обычный спрайт окна реплики
 choiceBoxSelectedSprite = sChoiceBoxSelected; // спрайт при выборе
 choiceAreas = []; // координаты для мыши, заполняются динамически
+currentDialogueList = [];
+dialogueIndex       = 0;

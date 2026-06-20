@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"THEFIRSTANDONLYGAME",
-    "path":"THEFIRSTANDONLYGAME.yyp",
+    "name":"Sprites",
+    "path":"folders/MiniGame 1/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

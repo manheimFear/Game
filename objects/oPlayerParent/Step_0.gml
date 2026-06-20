@@ -17,6 +17,7 @@ if (keyboard_check_pressed(ord("N")) && global.hasNotebook) {
         nb.animState      = "opening";
         nb.animSprite     = sNotebookOpenAnim; // твой спрайт анимации открытия
         nb.animTimer      = 0;
+		nb.animFrame      = 0;
         nb.pendingPage    = 0; // после анимации покажем главное меню
         global.menuOpen   = true;
         instance_deactivate_all(true);

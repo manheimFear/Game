@@ -20,7 +20,8 @@ function scr_save_game(slot) {
         playerY:     instance_exists(oPlayerParent) ? oPlayerParent.y : 0,
         inventory:   global.inventory,
         flags:       global.flags,
-        hasNotebook: global.hasNotebook
+        hasNotebook: global.hasNotebook,
+		pickedItems: global.pickedItems,
     };
     var _f = file_text_open_write(working_directory + "save_slot_" + string(slot) + ".json");
     file_text_write_string(_f, json_stringify(_data));

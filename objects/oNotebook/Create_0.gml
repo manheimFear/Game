@@ -1,8 +1,5 @@
-animState = "none"; // "none", "opening", "page_transition"
-animSprite = -1;
-animTimer = 0;
-pendingPage = -1; // страница, на которую переходим после анимации
-global.fMyFont = font_add("Chalkduster.ttf", 24, false, false, 32, 128);
+
+
 // Все места где visible = false в oNotebook:
 visible          = false;
 global.menuOpen  = false;
@@ -102,7 +99,7 @@ detailXR = 150; detailYR = 185; detailWR = 450; detailHR = 480;
 // ══════════════════════════════════════════════════
 counterX    = 635;     // ← X-позиция текста
 counterY    = 75;      // ← Y-позиция текста
-counterFont = global.fMyFont; // ← шрифт (замени на нужный)
+counterFont = fMyFont; // ← шрифт (замени на нужный)
 counterCol  = c_black; // ← цвет: c_black, c_white, make_colour_rgb(r,g,b), и т.д.
 
 // ══════════════════════════════════════════════════
@@ -153,3 +150,13 @@ if (variable_global_exists("justLoaded") && global.justLoaded) {
     global.menuOpen = false;
     global.justLoaded = false;
 }
+// Create event:
+animTimer     = 0;
+animFrame     = 0;
+animFrameDelay = 60; // сколько Step-ов держать один кадр (15 = четверть секунды при 60fps)
+animX     = 0; // X-координата центра анимации (подбери под свой UI)
+animY     = 0; // Y-координата центра
+animScale = 1;    // масштаб (1 = реальный размер)
+animState = "none"; // "none", "opening", "page_transition"
+animSprite = -1;
+pendingPage = -1; // страница, на которую переходим после анимации

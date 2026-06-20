@@ -10,8 +10,8 @@
   "name":"oAutoSaveNotify",
   "overriddenProperties":[],
   "parent":{
-    "name":"THEFIRSTANDONLYGAME",
-    "path":"THEFIRSTANDONLYGAME.yyp",
+    "name":"Objects",
+    "path":"folders/MiniGame 1/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":true,

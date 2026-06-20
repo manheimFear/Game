@@ -3,9 +3,11 @@ if (!visible) exit;
 var gW = display_get_gui_width();
 var gH = display_get_gui_height();
 
+// Step event, в блоке анимации:
+// Draw GUI:
 if (animState == "opening" || animState == "page_transition") {
-    draw_sprite(animSprite, animTimer, 0, 0); // конкретный кадр анимации
-    exit; // не рисуем страницы пока крутится анимация
+    draw_sprite_ext(animSprite, animFrame, animX, animY, animScale, animScale, 0, c_white, 1);
+    exit;
 }
 // ── ГЛАВНОЕ МЕНЮ ──
 if (currentPage == 0) {
@@ -111,7 +113,7 @@ else if (currentPage == 2) {
 // ── Счётчик страниц ───────────────────────────────────────────
 // Все настройки — в Create:
 //   counterX / counterY — координаты
-//   counterFont         — шрифт (global.fMyFont, fAnotherFont, …)
+//   counterFont         — шрифт (fMyFont, fAnotherFont, …)
 //   counterCol          — цвет   (c_black, c_white, make_colour_rgb(255,200,0), …)
 if (array_length(global.inventory) > 8) {
     draw_set_font(counterFont);
@@ -139,7 +141,7 @@ if (array_length(global.inventory) > 8) {
         }
 
         // Короткое описание
-        draw_set_font(global.fMyFont);
+        draw_set_font(fMyFont);
         draw_set_colour(c_black);
         draw_text_ext(textX[i], sy + 5, item.shortDesc, 22, textW);
 
@@ -165,7 +167,7 @@ draw_sprite(item.detailSprite, 0, sprX, 0);
         if (sprite_exists(item.sprite))
             draw_sprite_ext(item.sprite, 0, _dx + _dw/2, _dy + 160, 1.8, 1.8, 0, c_white, 1);
 
-        draw_set_font(global.fMyFont);
+        draw_set_font(fMyFont);
         draw_set_colour(c_black);
 
         // Название: спрайт или текст
@@ -199,7 +201,7 @@ else if (currentPage == 3) {
             draw_sprite_stretched(sSlotEmpty, 0, _sa.x, _sa.y, _sa.w, _sa.h);
         } else {
             draw_sprite_stretched(sSlotFilled, 0, _sa.x, _sa.y, _sa.w, _sa.h);
-            draw_set_font(global.fMyFont);
+            draw_set_font(fMyFont);
             draw_set_colour(c_black);
             draw_text(_sa.x + 35, _sa.y + 15, _sd.chapter);
             var _h = _sd.playtime div 3600;
@@ -218,12 +220,12 @@ else if (currentPage == 3) {
     var _aa = autoSlotArea;
     if (autoSlotData == noone) {
         draw_sprite_stretched(ZeroAuto, 0, _aa.x, _aa.y, _aa.w, _aa.h);
-        draw_set_font(global.fMyFont);
+        draw_set_font(fMyFont);
         draw_set_colour(c_dkgray);
         draw_text(_aa.x + 20, _aa.y + 30, "Автосохранение отсутствует");
     } else {
         draw_sprite_stretched(AutoSave, 0, _aa.x, _aa.y, _aa.w, _aa.h);
-        draw_set_font(global.fMyFont);
+        draw_set_font(fMyFont);
         draw_set_colour(c_black);
         draw_text(_aa.x + 20, _aa.y + 10, autoSlotData.chapter + " Гл.");
         var _h = autoSlotData.playtime div 3600;
@@ -243,7 +245,7 @@ else if (currentPage == 3) {
         draw_rectangle(0, 0, gW, gH, false);
         draw_set_alpha(1);
         draw_sprite_stretched(sConfirmBg, 0, 423, 203, 513, 325);
-        draw_set_font(global.fMyFont);
+        draw_set_font(fMyFont);
         draw_set_colour(c_black);
         draw_sprite_stretched(sBtnYes, 0,
             confirmYesBtnArea.x, confirmYesBtnArea.y,

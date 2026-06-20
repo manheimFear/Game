@@ -17,6 +17,7 @@ function scr_load_game(slot) {
 
     global.loadPlayerX = _d.playerX;
     global.loadPlayerY = _d.playerY;
+	global.pickedItems = variable_struct_exists(_d, "pickedItems") ? _d.pickedItems : {};
 
 room_goto(asset_get_index(_d.sceneName));
     return true;
