@@ -1,11 +1,17 @@
-if (instance_place(x, y, oPlayer)) {
+if (!variable_global_exists("pickedItems")) {
+    global.pickedItems = {};
+}
+if (instance_place(x, y, oPlayerParent)) {
+	if (g<1)
+	{
     if (keyboard_check_pressed(ord("E"))) {
-			g += 1;
-		draw = true;
+        array_push(global.inventory, itemData);
+        variable_struct_set(global.pickedItems, itemUniqueId, true);
+       		draw = true;
 		image_index = 1;
-        }
-        
+		g+=1;
+	}
+    }
 }
 else
 draw = false;
-event_inherited();
