@@ -3,7 +3,6 @@
 // Все места где visible = false в oNotebook:
 visible          = false;
 global.menuOpen  = false;
-instance_activate_all();
 
 currentPage = 0;
 

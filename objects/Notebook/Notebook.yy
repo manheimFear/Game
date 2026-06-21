@@ -12,7 +12,10 @@
     "name":"Menu",
     "path":"folders/Menu.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"Picked",
+    "path":"objects/Picked/Picked.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

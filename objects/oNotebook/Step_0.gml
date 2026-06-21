@@ -43,7 +43,6 @@ if (currentPage == 0) {
     visible           = false;
     global.menuOpen   = false;
     global.gamePaused = false;
-    instance_activate_all();
     break;
              case 1:
     currentPage   = 3;
@@ -69,7 +68,6 @@ if (currentPage == 0) {
     if (keyboard_check_pressed(vk_escape)) {
 visible          = false;
 global.menuOpen  = false;
-instance_activate_all();
 global.gamePaused = false;
 
     }
@@ -236,7 +234,6 @@ else if (currentPage == 3) {
                             scr_load_game(i); 
 visible          = false;
 global.menuOpen  = false;
-instance_activate_all();
 global.gamePaused = false;
 
                         }
@@ -252,7 +249,6 @@ global.gamePaused = false;
                         scr_load_game(3);
 visible          = false;
 global.menuOpen  = false;
-instance_activate_all();
 global.gamePaused = false;
 
                     }

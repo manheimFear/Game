@@ -64,12 +64,12 @@ if (showingChoices) {
         var _y = _startY + i * _boxSpacing;
         var _spr = (i == selectedChoice) ? choiceBoxSelectedSprite : choiceBoxSprite;
         
-        draw_sprite_stretched(_spr, 0, 200, _y, 600, _boxHeight); // 200 = X, 600 = ширина
+        draw_sprite_stretched(_spr, 0, 1000, _y, 400, _boxHeight); // 200 = X, 600 = ширина
         
         draw_set_font(fMyFont);
         draw_set_colour((i == selectedChoice) ? c_yellow : c_white);
-        draw_text(220, _y + 15, choices[i].text);
+        draw_text(1000, _y + 15, choices[i].text);
         
-        array_push(choiceAreas, {x: 200, y: _y, w: 600, h: _boxHeight});
+        array_push(choiceAreas, {x: 1000, y: _y, w: 400, h: _boxHeight});
     }
 }

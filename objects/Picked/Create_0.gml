@@ -1,10 +1,5 @@
-if (variable_struct_exists(global.pickedItems, itemUniqueId) 
-&& variable_struct_get(global.pickedItems, itemUniqueId) == true) {
-    instance_destroy();
-    exit;
-}
+itemUniqueId = ""; // дефолт, ребёнок переопределит
 
-// Данные предмета для добавления в инвентарь — задаются в детях через переопределение
 itemData = {
     name:             "",
     sprite:           sprite_index,

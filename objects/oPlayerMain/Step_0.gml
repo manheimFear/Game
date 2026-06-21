@@ -37,5 +37,4 @@ if (global.loadPlayerX != -1) {
     global.loadPlayerX = -1;
     global.loadPlayerY = -1;
 }
-show_debug_message(global.menuOpen);
-show_debug_message(global.Dialogue);
+show_debug_message(global.hasNotebook)

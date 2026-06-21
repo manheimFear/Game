@@ -7,9 +7,7 @@ touch_wall_right = place_meeting(x + 1, y, oPlatform)
                 && !place_meeting(x, y + 1, oPlatform)
                 && !instance_place(x + 1, y, oPlatformNotClimb);
 
-if (inputJump) {
-    show_debug_message("JUMP: touchL=" + string(touch_wall_left) + " touchR=" + string(touch_wall_right) + " onGround=" + string(place_meeting(x, y+1, oPlatformParent)));
-}
+
 
 var left  = keyboard_check(ord("A"));
 var right = keyboard_check(ord("D"));

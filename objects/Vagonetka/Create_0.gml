@@ -1,11 +1,11 @@
 depth = 1
 draw = false;
 g = 0;
-itemUniqueId = "letter_room6_01"; // уникальный ID для этого конкретного инстанса
 
-event_inherited(); // вызывает Create родителя — там сработает проверка pickedItems
 
-// Переопределяем данные предмета (после event_inherited, чтобы itemData уже существовал)
+event_inherited(); // выполнит Create родителя — установит itemData с дефолтами
+itemUniqueId = "letter_room6_01"; // твой уникальный ID
+// Переопределяем данные предмета
 itemData.name             = "Загадочный листок";
 itemData.sprite           = sKeyItem;
 itemData.shortDesc        = "Ключ от чего-то...";
@@ -13,3 +13,12 @@ itemData.desc             = "";
 itemData.detailSprite     = Sticker;
 itemData.nameDetailSprite = noone;
 itemData.descSprite       = noone;
+
+// ── Проверка "уже подобран" — теперь здесь, в самом конце ребёнка ──
+if (!variable_global_exists("pickedItems")) {
+    global.pickedItems = {};
+}
+if (variable_struct_exists(global.pickedItems, itemUniqueId) 
+    && variable_struct_get(global.pickedItems, itemUniqueId) == true) {
+    instance_destroy();
+}
