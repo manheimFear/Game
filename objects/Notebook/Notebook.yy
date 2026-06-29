@@ -9,8 +9,8 @@
   "name":"Notebook",
   "overriddenProperties":[],
   "parent":{
-    "name":"Menu",
-    "path":"folders/Menu.yy",
+    "name":"Objects",
+    "path":"folders/Room1/Objects.yy",
   },
   "parentObjectId":{
     "name":"Picked",

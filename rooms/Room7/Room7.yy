@@ -27,8 +27,8 @@
   ],
   "name":"Room7",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"MiniGame 1",
+    "path":"folders/MiniGame 1.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -1,4 +1,4 @@
-
+depth = -3;
 
 event_inherited(); // вызывает Create родителя — там сработает проверка pickedItems
 itemUniqueId = "notebook"; // уникальный ID для этого конкретного инстанса

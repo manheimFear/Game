@@ -8,7 +8,7 @@ itemUniqueId = "letter_room6_01"; // твой уникальный ID
 // Переопределяем данные предмета
 itemData.name             = "Загадочный листок";
 itemData.sprite           = sKeyItem;
-itemData.shortDesc        = "Ключ от чего-то...";
+itemData.shortDesc        = "Что-то написано...";
 itemData.desc             = "";
 itemData.detailSprite     = Sticker;
 itemData.nameDetailSprite = noone;

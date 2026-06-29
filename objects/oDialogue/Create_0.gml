@@ -16,3 +16,4 @@ choiceBoxSelectedSprite = sChoiceBoxSelected; // спрайт при выбор�
 choiceAreas = []; // координаты для мыши, заполняются динамически
 currentDialogueList = [];
 dialogueIndex       = 0;
+_dialogue_sprite = DialogueWindow

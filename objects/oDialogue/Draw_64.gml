@@ -9,7 +9,7 @@ if (DialogueSprite != -1) {
 }
 
 // Окно диалога
-draw_sprite_stretched(DialogueWindow, 0, 0, 0, _guiW, _guiH);
+draw_sprite_stretched(_dialogue_sprite, 0, 0, 0, _guiW, _guiH);
 
 // Имя
 draw_set_font(fMyFont);

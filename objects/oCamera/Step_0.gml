@@ -1,6 +1,7 @@
 // ── Следование за игроком с ограничением по границам ─────
 var _player = instance_find(oPlayerParent, 0);
 var _cam    = view_camera[0];
+var _p = _player;
 
 camWidth  = lerp(camWidth,  targetCamWidth,  0.05);
 camHeight = lerp(camHeight, targetCamHeight, 0.05);
@@ -16,17 +17,26 @@ if (!cutsceneMode) {
         camX = _targetX;
         camY = _targetY;
     }
-} else {
-    // Плавное движение в целевую точку
-    var _cx = cutsceneTargetX - camWidth  / 2;
-    var _cy = cutsceneTargetY - camHeight / 2;
-    _cx = clamp(_cx, 0, max(0, room_width  - camWidth));
-    _cy = clamp(_cy, 0, max(0, room_height - camHeight));
+}  
+if (cutsceneMode)
+{
+    // Базовая позиция — как при обычном следовании, плюс смещение
+    var _baseX = clamp(_p.x - camWidth / 2, 0, max(0, room_width - camWidth));
+    var _baseY = clamp(_p.y - camHeight / 2, 0, max(0, room_height - camHeight));
+    
+    var _cx = clamp(_baseX + cutsceneOffsetX, 0, max(0, room_width  - camWidth));
+    var _cy = clamp(_baseY + cutsceneOffsetY, 0, max(0, room_height - camHeight));
+    
     camX = lerp(camX, _cx, cutsceneSpeed);
     camY = lerp(camY, _cy, cutsceneSpeed);
-	   global.cameraAtTarget = (abs(camX - _cx) < 3 && abs(camY - _cy) < 3);
+   global.cameraAtTarget = (abs(camX - _cx) < 3 && abs(camY - _cy) < 3);
 }
-
+show_debug_message("clampMax=" + string(max(0, room_width - camWidth)) + " room_width=" + string(room_width));
+show_debug_message("mode=" + string(cutsceneMode) + 
+    " camX=" + string(camX) + 
+    " targetX=" + string(cutsceneTargetX) + 
+    " camWidth=" + string(camWidth) + 
+    " returning=" + string(returning));
 camera_set_view_pos(_cam, camX, camY);
 
 // ── Возврат камеры (если returning == true) ───────────────
