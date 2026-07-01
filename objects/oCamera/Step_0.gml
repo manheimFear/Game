@@ -31,12 +31,7 @@ if (cutsceneMode)
     camY = lerp(camY, _cy, cutsceneSpeed);
    global.cameraAtTarget = (abs(camX - _cx) < 3 && abs(camY - _cy) < 3);
 }
-show_debug_message("clampMax=" + string(max(0, room_width - camWidth)) + " room_width=" + string(room_width));
-show_debug_message("mode=" + string(cutsceneMode) + 
-    " camX=" + string(camX) + 
-    " targetX=" + string(cutsceneTargetX) + 
-    " camWidth=" + string(camWidth) + 
-    " returning=" + string(returning));
+
 camera_set_view_pos(_cam, camX, camY);
 
 // ── Возврат камеры (если returning == true) ───────────────

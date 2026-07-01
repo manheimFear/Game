@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"PrepareText",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"PrepareText",
+  "parent":{
+    "name":"THEFIRSTANDONLYGAME",
+    "path":"THEFIRSTANDONLYGAME.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

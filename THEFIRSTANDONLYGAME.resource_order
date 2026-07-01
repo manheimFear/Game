@@ -64,6 +64,7 @@
     {"name":"SecondRoom","order":2,"path":"rooms/SecondRoom/SecondRoom.yy",},
     {"name":"ThirdRoom","order":3,"path":"rooms/ThirdRoom/ThirdRoom.yy",},
     {"name":"LoadGame","order":20,"path":"scripts/LoadGame/LoadGame.yy",},
+    {"name":"PrepareText","order":62,"path":"scripts/PrepareText/PrepareText.yy",},
     {"name":"SaveGame","order":21,"path":"scripts/SaveGame/SaveGame.yy",},
     {"name":"TextSlot","order":22,"path":"scripts/TextSlot/TextSlot.yy",},
     {"name":"AutoSave","order":29,"path":"sprites/AutoSave/AutoSave.yy",},

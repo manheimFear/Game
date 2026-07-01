@@ -95,6 +95,7 @@
     {"id":{"name":"Climbing","path":"scripts/Climbing/Climbing.yy",},},
     {"id":{"name":"FiltrationDialogue","path":"scripts/FiltrationDialogue/FiltrationDialogue.yy",},},
     {"id":{"name":"LoadGame","path":"scripts/LoadGame/LoadGame.yy",},},
+    {"id":{"name":"PrepareText","path":"scripts/PrepareText/PrepareText.yy",},},
     {"id":{"name":"SaveGame","path":"scripts/SaveGame/SaveGame.yy",},},
     {"id":{"name":"TextSlot","path":"scripts/TextSlot/TextSlot.yy",},},
     {"id":{"name":"AutoSave","path":"sprites/AutoSave/AutoSave.yy",},},

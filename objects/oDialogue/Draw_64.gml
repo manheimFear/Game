@@ -3,14 +3,14 @@ if (!visible) exit;
 var _guiW = display_get_gui_width();
 var _guiH = display_get_gui_height();
 
-// Спрайт персонажа за окном
-if (DialogueSprite != -1) {
-    draw_sprite_stretched(DialogueSprite, 0, 0, 0, _guiW, _guiH);
-}
+
 
 // Окно диалога
 draw_sprite_stretched(_dialogue_sprite, 0, 0, 0, _guiW, _guiH);
-
+// Спрайт персонажа перед окном
+if (DialogueSprite != -1) {
+    draw_sprite_stretched(DialogueSprite, 0, 0, 0, _guiW, _guiH);
+}
 // Имя
 draw_set_font(fMyFont);
 if (nameSprite != -1) {
